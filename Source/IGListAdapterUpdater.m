@@ -247,8 +247,8 @@ willPerformBatchUpdatesWithCollectionView:collectionView
                 [collectionView performBatchUpdates:^{
                     batchUpdatesBlock(result);
                 } completion:^(BOOL finished) {
-                    [CATransaction commit];
                     batchUpdatesCompletionBlock(finished);
+                    [CATransaction commit];
                 }];
             }
         } @catch (NSException *exception) {
